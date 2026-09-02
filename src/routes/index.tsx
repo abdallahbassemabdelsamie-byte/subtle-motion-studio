@@ -154,7 +154,7 @@ function TourCard({ tour, tall = false }: { tour: Tour; tall?: boolean }) {
     <Link
       to="/tour/$slug"
       params={{ slug: tour.slug }}
-      className="group relative flex flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
+      className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
     >
       <div className={`overflow-hidden ${tall ? "h-72" : "h-56"}`}>
         <img
@@ -271,7 +271,7 @@ function Index() {
           />
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {FEATURED.map((tour, i) => (
-              <Reveal key={tour.title} delay={i * 80}>
+              <Reveal key={tour.title} delay={i * 80} className="h-full">
                 <TourCard tour={tour} tall={i % 3 === 0} />
               </Reveal>
             ))}
@@ -305,7 +305,7 @@ function Index() {
             </p>
             <div className="mt-10 grid gap-6 md:grid-cols-3">
               {HURGHADA.map((tour, i) => (
-                <Reveal key={tour.title} delay={i * 80}>
+                <Reveal key={tour.title} delay={i * 80} className="h-full">
                   <TourCard tour={tour} />
                 </Reveal>
               ))}
@@ -331,7 +331,7 @@ function Index() {
           </p>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {MARSA.map((tour, i) => (
-              <Reveal key={tour.title} delay={i * 80}>
+              <Reveal key={tour.title} delay={i * 80} className="h-full">
                 <TourCard tour={tour} />
               </Reveal>
             ))}

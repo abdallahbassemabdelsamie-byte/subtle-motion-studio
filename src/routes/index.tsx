@@ -245,11 +245,7 @@ function Index() {
               Mehr über uns →
             </Link>
           </article>
-        </section>
-
-        {/* Contact */}
-        <section className="mx-auto max-w-7xl px-5 pb-16">
-          <div className="flex flex-col items-center gap-4 rounded-3xl bg-sand p-8 text-center">
+          <div className="flex flex-col items-center justify-center gap-4 rounded-3xl bg-sand p-8 text-center">
             <p className="font-display text-xl text-deep sm:text-2xl">Fragen zu unseren Touren?</p>
             <p className="max-w-xl text-sm text-muted-foreground">
               Wir helfen Ihnen gerne bei der Auswahl des passenden Ausflugs und erstellen Ihnen ein individuelles Angebot.
@@ -269,7 +265,7 @@ function Index() {
             eyebrow="Beliebteste Ausflüge"
             title="Abenteuer und erstaunliche Erlebnisse – alles in unseren besten Touren"
           />
-          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mx-auto mt-10 grid max-w-5xl gap-6 md:grid-cols-2 lg:grid-cols-3">
             {FEATURED.map((tour, i) => (
               <Reveal key={tour.title} delay={i * 80} className="h-full">
                 <TourCard tour={tour} tall={i % 3 === 0} />

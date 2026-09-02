@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
+import { Reveal } from "@/components/Reveal";
 
 const SITE = "https://redsea-getyourguide.com";
 const LOGO = "/images/cropped-getyour-guide-scaled.png";
@@ -198,7 +199,7 @@ function Index() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-deep/25 via-deep/10 to-deep/35" />
 
-          <div className="relative mx-auto max-w-4xl px-5 py-28 text-center sm:py-36">
+          <div className="relative mx-auto max-w-4xl px-5 py-28 text-center sm:py-36 animate-fade-up">
             <p className="text-xs font-semibold uppercase tracking-[0.32em] text-accent">
               Hurghada · Marsa Alam · Rotes Meer
             </p>
@@ -270,7 +271,9 @@ function Index() {
           />
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {FEATURED.map((tour, i) => (
-              <TourCard key={tour.title} tour={tour} tall={i % 3 === 0} />
+              <Reveal key={tour.title} delay={i * 80}>
+                <TourCard tour={tour} tall={i % 3 === 0} />
+              </Reveal>
             ))}
           </div>
         </section>
@@ -301,8 +304,10 @@ function Index() {
               und Ihren Urlaub unvergesslich zu machen.
             </p>
             <div className="mt-10 grid gap-6 md:grid-cols-3">
-              {HURGHADA.map((tour) => (
-                <TourCard key={tour.title} tour={tour} />
+              {HURGHADA.map((tour, i) => (
+                <Reveal key={tour.title} delay={i * 80}>
+                  <TourCard tour={tour} />
+                </Reveal>
               ))}
             </div>
           </div>
@@ -325,8 +330,10 @@ function Index() {
             nutzen und Ihre Bedürfnisse zu erfüllen, und garantieren viel Spaß.
           </p>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {MARSA.map((tour) => (
-              <TourCard key={tour.title} tour={tour} />
+            {MARSA.map((tour, i) => (
+              <Reveal key={tour.title} delay={i * 80}>
+                <TourCard tour={tour} />
+              </Reveal>
             ))}
           </div>
         </section>
